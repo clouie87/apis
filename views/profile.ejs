@@ -24,20 +24,79 @@
         <div class="col-sm-6">
             <div class="well">
                 <h3><span class="fa fa-user"></span> Local</h3>
-
-
+              <% if (user.account === 'local') { %>
                 <p>
                     <strong>id</strong>: <%= user.id %><br>
-
                     <strong>name</strong>: <%= user.name %><br>
                     <strong>email</strong>: <%= user.email %><br>
-                    <strong>account type</strong>: <%= user.account %>
                 </p>
+              <% } else { %>
+              <a href="/connect/local" class="btn btn-default">Connect Local</a>
+              <% } %>
+
+
             </div>
         </div>
 
+      <!-- FACEBOOK INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+          <% if (user.facebook_token) { %>
+          <p>
+            <strong>id</strong>: <%= user.id %><br>
+            <strong>token</strong>: <%= user.facebook_token %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>name</strong>: <%= user.name %>
+          </p>
+          <% } else { %>
+          <a href="/connect/facebook" class="btn btn-default">Connect Facebook</a>
+          <% } %>
 
-        <div class="col-sm-6">
+        </div>
+      </div>
+
+      <!-- Instagram INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3 class="text-warning"><span class="fa fa-instagram"></span> Instagram</h3>
+          <% if (user.insta_token) { %>
+          <p>
+            <strong>id</strong>: <%= user.id %><br>
+            <strong>token</strong>: <%= user.insta_token %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>name</strong>: <%= user.name %>
+          </p>
+          <% } else { %>
+          <a href="/connect/instagram" class="btn btn-default">Connect Instagram</a>
+          <% } %>
+
+        </div>
+      </div>
+
+
+      <!-- GOOGLE INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+          <% if (user.google_token) { %>
+          <p>
+            <strong>id</strong>: <%= user.id %><br>
+            <strong>token</strong>: <%= user.google_token %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>name</strong>: <%= user.name %>
+          </p>
+
+          <% } else { %>
+          <a href="/connect/google" class="btn btn-default">Connect Google</a>
+          <% } %>
+
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-6">
             <div class="well">
                 <h3><span class="fa fa-user"></span> Add Photos</h3>
                 <a href="/upload" class="btn btn-warning"> + </a>
@@ -52,7 +111,7 @@
           <strong>photos</strong>: <br>
           <div class = "row">
             <% photos.forEach(function(photo) { %>
-              <img style="width: 300px; height: 200px" src = 'http://localhost:3000/<%= photo.filepath %>'/>
+              <img style="width: 300px; height: 200px" src = 'http://45.55.210.159/<%= photo.filepath %>'/>
             <% }); %>
 
 
