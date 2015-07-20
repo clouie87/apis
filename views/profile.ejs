@@ -24,12 +24,14 @@
         <div class="col-sm-6">
             <div class="well">
                 <h3><span class="fa fa-user"></span> Local</h3>
-              <% if (user.account === 'local') { %>
+              <% if (user.password) { %>
                 <p>
                     <strong>id</strong>: <%= user.id %><br>
                     <strong>name</strong>: <%= user.name %><br>
                     <strong>email</strong>: <%= user.email %><br>
                 </p>
+              <a href="/unlink/local" class="btn btn-default">Unlink Local</a>
+
               <% } else { %>
               <a href="/connect/local" class="btn btn-default">Connect Local</a>
               <% } %>
@@ -49,6 +51,8 @@
             <strong>email</strong>: <%= user.email %><br>
             <strong>name</strong>: <%= user.name %>
           </p>
+
+          <a href="/unlink/facebook" class="btn btn-default">Unlink Facebook</a>
           <% } else { %>
           <a href="/connect/facebook" class="btn btn-default">Connect Facebook</a>
           <% } %>
@@ -67,6 +71,7 @@
             <strong>email</strong>: <%= user.email %><br>
             <strong>name</strong>: <%= user.name %>
           </p>
+          <a href="/unlink/instagram" class="btn btn-default">Unlink Instagram</a>
           <% } else { %>
           <a href="/connect/instagram" class="btn btn-default">Connect Instagram</a>
           <% } %>
@@ -86,6 +91,8 @@
             <strong>email</strong>: <%= user.email %><br>
             <strong>name</strong>: <%= user.name %>
           </p>
+
+          <a href="/unlink/google" class="btn btn-default">Unlink Google</a>
 
           <% } else { %>
           <a href="/connect/google" class="btn btn-default">Connect Google</a>
